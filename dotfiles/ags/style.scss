@@ -1,0 +1,68 @@
+// https://gitlab.gnome.org/GNOME/gtk/-/blob/gtk-3-24/gtk/theme/Adwaita/_colors-public.scss
+$fg-color: #{"@theme_fg_color"};
+$bg-color: #{"@theme_bg_color"};
+
+window.Bar {
+
+    background: transparent;
+    color: $fg-color;
+    font-weight: bold;
+
+    .main-box { 
+      border-radius: 0px;
+      background: rgba(47, 47, 47, 0);
+      margin-left: 8px;
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+    
+    .workspaces-container {
+      background-color: #1c1d18; 
+      border-radius: 10px; 
+      padding: 6px;
+    }
+    
+    .workspace-button {
+      min-height: 5px;
+      min-width: 5px;
+      margin: 3px 4px;
+      background-color: #ffffff;
+      opacity: 0.5;
+      
+      &.active {
+        min-height: 15px;
+        margin: 4px 4px;
+        opacity: 1;
+        background-color: #ae81ff;
+      }
+    }
+
+    .top-container {
+      background-color: #1c1d18; 
+      border-radius: 10px; 
+      padding: 6px;
+    }
+
+    .bottom-container {
+      background-color: #1c1d18; 
+      border-radius: 10px; 
+      padding: 6px;
+    }
+    
+    .time {
+      font-family: "Orbitron"; 
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+
+    .wifi {
+      margin: 5px 0px;
+      color: #66d9ef;
+    }
+
+    .battery {
+      margin: 5px 0px;
+      margin-bottom: 15px;
+      color: #a6e22e;
+    }
+  }

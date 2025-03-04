@@ -16,7 +16,7 @@ in {
       ...
     }: {
       home.packages = [pkgs.kitty];
-      home.file.".config/kitty/kitty.conf".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/dotfiles/kitty/kitty.conf";
+      xdg.configFile.kitty.source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/dotfiles/kitty";
     };
   };
 }

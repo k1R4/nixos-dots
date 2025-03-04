@@ -18,6 +18,10 @@ in {
         lxmenu-data
         shared-mime-info
       ];
+
+      xdg.mimeApps.defaultApplications = {
+        "inode/directory" = "pcmanfm.desktop";
+      };
     };
   };
 }

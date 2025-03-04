@@ -22,5 +22,11 @@ in {
         thunar-volman
       ];
     };
+
+    home-manager.users.k1r4 = {
+      xdg.mimeApps.defaultApplications = {
+        "inode/directory" = "thunar.desktop";
+      };
+    };
   };
 }

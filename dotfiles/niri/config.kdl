@@ -8,7 +8,7 @@ input {
     keyboard {
         xkb {
             layout "us,us"
-            variant "dvorak,"
+            variant ",dvorak"
             options "grp:win_space_toggle"
         }
     }
@@ -41,7 +41,7 @@ output "HDMI-A-1" {
 
 // Layout
 layout {
-    gaps 16
+    gaps 12
     center-focused-column "on-overflow"
     preset-column-widths {
         proportion 0.33333
@@ -74,9 +74,12 @@ layout {
 spawn-at-startup "dunst"
 spawn-at-startup "xwayland-satellite" ":12"
 spawn-at-startup "swww-daemon"
+spawn-at-startup "ags" "run" "--gtk4"
 
 environment {
     DISPLAY ":12"
+    NIXOS_OZONE_WL "1"
+    WLR_DRM_DEVICES "/dev/dri/card1"
 }
 
 // Misc
@@ -98,6 +101,7 @@ window-rule {
     geometry-corner-radius 7
     clip-to-geometry true
 }
+
 
 // Key bindings
 binds {

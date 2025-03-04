@@ -16,7 +16,7 @@ in {
       ...
     }: {
       home.packages = [pkgs.dunst];
-      home.file.".config/dunst/dunstrc".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/dotfiles/dunst/dunstrc";
+      xdg.configFile.dunst.source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/dotfiles/dunst";
     };
   };
 }

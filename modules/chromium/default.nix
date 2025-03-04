@@ -13,6 +13,7 @@ in {
     home-manager.users.k1r4 = {
       programs.chromium = {
         enable = true;
+        package = pkgs.chromium.override {enableWideVine = true;};
         extensions = [
           "nngceckbapebfimnlniiiahkandclblb"
           "cjpalhdlnbpafiamejdnhcphjbkeiagm"

@@ -9,10 +9,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # nixvim = {
-    #   url = "github:nix-community/nixvim";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    
+    ags.url = "github:aylur/ags"; 
 
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
@@ -34,9 +33,9 @@
         };
         modules = [
           {networking.hostName = hostname;}
-          ./modules/system/configuration.nix
+          ./hosts/common/configuration.nix
           (./. + "/hosts/${hostname}/hardware-configuration.nix")
-          ./modules/system/home.nix
+          ./hosts/common/home.nix
           (./. + "/hosts/${hostname}/user.nix")
         ];
       };

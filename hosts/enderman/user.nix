@@ -8,7 +8,9 @@
 
   config.modules = {
     # GUI
+    ags.enable = true;
     dunst.enable = true;
+    fuzzel.enable = true;
     kitty.enable = true;
     niri.enable = true;
 

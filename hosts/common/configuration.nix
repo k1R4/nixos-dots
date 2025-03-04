@@ -41,7 +41,7 @@
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
-    variant = "dvorak";
+    variant = "us";
   };
 
   # SDDM
@@ -62,7 +62,7 @@
   users.users.k1r4 = {
     isNormalUser = true;
     description = "k1r4";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "docker"];
     shell = pkgs.fish;
   };
 

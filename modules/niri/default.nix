@@ -23,25 +23,31 @@ in {
       pkgs,
       ...
     }: {
-      home.file.".config/niri/config.kdl".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/dotfiles/niri/config.kdl";
+      xdg.configFile.niri.source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/dotfiles/niri";
 
       home.packages = with pkgs; [
         swww
-        fuzzel
         xwayland-satellite
       ];
 
-      home.sessionVariables."NIXOS_OZONE_WL" = 1; # Electron/Chromium
-      home.sessionVariables."DISPLAY" = ":0"; # Xwayland satellite
-
+      services.gnome-keyring.enable = true;
+      xdg.mimeApps.enable = true;
       xdg.portal = {
         enable = true;
         xdgOpenUsePortal = true;
         extraPortals = [
-          pkgs.xdg-desktop-portal-gnome
           pkgs.xdg-desktop-portal-gtk
+          pkgs.xdg-desktop-portal-gnome
         ];
-        config.common.default = "gnome";
+        config.common = {
+          default = [
+            "gnome"
+            "gtk"
+          ];
+          "org.freedesktop.impl.portal.Access" = "gtk";
+          "org.freedesktop.impl.portal.Notification" = "gtk";
+          "org.freedesktop.impl.portal.Secret" = "gnome-keyring";
+        };
       };
     };
   };

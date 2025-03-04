@@ -1,7 +1,9 @@
 {...}: {
   imports = [
+    ./ags
     ./chromium
     ./dunst
+    ./fuzzel
     ./gaming
     ./git
     ./kitty

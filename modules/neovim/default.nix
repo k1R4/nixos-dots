@@ -16,12 +16,27 @@ in {
       pkgs,
       ...
     }: {
-      programs.neovim.enable = true;
+      programs.neovim = {
+        enable = true;
+        package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
+        extraPackages = with pkgs; [
+          gnumake
+          cmake
+          python3
+          gcc
+          ripgrep
+          sshfs
+          basedpyright
+          ccls
+          gopls
+          rust-analyzer
+          nixd
+          alejandra
+          lua-language-server
+          typescript-language-server
+        ];
+      };
       home.sessionVariables."EDITOR" = "nvim";
-
-      home.packages = with pkgs; [
-        python3
-      ];
 
       xdg.configFile.nvim.source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/dotfiles/nvim";
     };
