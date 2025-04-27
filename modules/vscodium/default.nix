@@ -18,21 +18,23 @@ in {
       programs.vscode = {
         enable = true;
         package = pkgs.vscodium;
-        extensions = with pkgs.vscode-extensions; [
-          eamodio.gitlens
-          llvm-vs-code-extensions.vscode-clangd
-          ms-python.python
-          rust-lang.rust-analyzer
-          kamadorueda.alejandra
-          bbenoist.nix
-          arrterian.nix-env-selector
-          sumneko.lua
-        ];
-        userSettings = {
-          "keyboard.dispatch" = "keyCode";
-          "workbench.colorTheme" = "Monokai";
-          "editor.fontSize" = 16;
-          "editor.fontFamily" = "'JetBrains Mono', 'monospace', monospace";
+        profiles.default = {
+          extensions = with pkgs.vscode-extensions; [
+            eamodio.gitlens
+            llvm-vs-code-extensions.vscode-clangd
+            ms-python.python
+            rust-lang.rust-analyzer
+            kamadorueda.alejandra
+            bbenoist.nix
+            arrterian.nix-env-selector
+            sumneko.lua
+          ];
+          userSettings = {
+            "keyboard.dispatch" = "keyCode";
+            "workbench.colorTheme" = "Monokai";
+            "editor.fontSize" = 16;
+            "editor.fontFamily" = "'JetBrains Mono', 'monospace', monospace";
+          };
         };
       };
     };

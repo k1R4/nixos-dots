@@ -9,9 +9,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    pwndbg.url = "github:pwndbg/pwndbg";
+
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
-    
-    ags.url = "github:aylur/ags"; 
+
+    ags.url = "github:aylur/ags";
 
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
@@ -30,6 +32,7 @@
         pkgs = import nixpkgs {
           system = system;
           config.allowUnfree = true;
+          config.permittedInsecurePackages = ["python-2.7.18.8"];
         };
         modules = [
           {networking.hostName = hostname;}

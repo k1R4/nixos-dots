@@ -10,6 +10,7 @@
     ./neovim
     ./niri
     ./pcmanfm
+    ./pwn
     ./rnnoise
     ./spicetify
     ./tailscale

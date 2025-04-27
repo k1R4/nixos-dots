@@ -34,6 +34,7 @@
 
   # Graphics
   hardware.nvidia = {
+    open = false;
     modesetting.enable = true;
     powerManagement.enable = true;
     powerManagement.finegrained = true;

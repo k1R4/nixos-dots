@@ -23,8 +23,11 @@ in {
 
     home-manager.users.k1r4 = {
       home.packages = with pkgs; [
+        protonup-qt
+        protontricks
         bottles
         heroic
+        prismlauncher
       ];
     };
   };

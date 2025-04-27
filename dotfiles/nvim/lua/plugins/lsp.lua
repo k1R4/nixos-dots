@@ -12,12 +12,18 @@ return {
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
       local lspconfig = require('lspconfig')
       local servers = { 'ccls', 'basedpyright', 'gopls', 'rust_analyzer', 'nixd', 'ts_ls' }
-      for _, lsp in ipairs(servers)
-      do
-        lspconfig[lsp].setup {
-          capabilities = capabilities,
-        }
+      for _, lsp in ipairs(servers) do
+        local ok, err = pcall(function()
+          lspconfig[lsp].setup { capabilities = capabilities }
+        end)
+        if not ok then
+          print("[LSP Setup Error] " .. lsp .. ": " .. err)
+        end
       end
+      -- for _, lsp in ipairs(servers)
+      -- do
+      --   lspconfig[lsp].setup { capabilities = capabilities }
+      -- end
 
       lspconfig.lua_ls.setup { settings = { Lua = { diagnostics = { globals = { 'vim' } } } } }
 
@@ -34,6 +40,13 @@ return {
               end,
             })
           end
+
+          vim.api.nvim_create_autocmd("CursorHold", {
+            buffer = args.buf,
+            callback = function()
+              vim.diagnostic.open_float(nil, { focusable = false, border = "rounded" })
+            end,
+          })
 
           if client:supports_method('textDocument/formatting') then
             vim.api.nvim_create_autocmd('BufWritePre', {

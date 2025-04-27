@@ -18,6 +18,9 @@
     options = "--delete-older-than 30d";
   };
 
+  # nix-ld
+  programs.nix-ld.enable = true;
+
   # Clear /tmp
   boot.tmp.cleanOnBoot = true;
 

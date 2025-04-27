@@ -19,13 +19,13 @@ input {
     }
 
     warp-mouse-to-focus
-    focus-follows-mouse
+    // focus-follows-mouse
 }
 
 // Monitors
 output "eDP-1" {
     mode "2560x1440@165.003"
-    variable-refresh-rate
+    // variable-refresh-rate
     scale 1.75
     transform "normal"
     position x=2048 y=0
@@ -33,7 +33,7 @@ output "eDP-1" {
 
 output "HDMI-A-1" {
     mode "2560x1440@144.000"
-    variable-refresh-rate
+    // variable-refresh-rate
     scale 1.25
     transform "normal"
     position x=0 y=0
@@ -80,6 +80,7 @@ environment {
     DISPLAY ":12"
     NIXOS_OZONE_WL "1"
     WLR_DRM_DEVICES "/dev/dri/card1"
+	_JAVA_AWT_WM_NONREPARENTING "1"
 }
 
 // Misc

@@ -25,8 +25,10 @@
 
     # Misc
     git.enable = true;
+    pwn.enable = true;
     rnnoise.enable = true;
     theme.enable = true;
+    tailscale.enable = true;
   };
 
   config.home-manager.users.k1r4 = {
@@ -34,10 +36,10 @@
       killall
       dnsutils
       neofetch
+      nvtopPackages.full
       pavucontrol
-      (vesktop.override {electron = pkgs.electron_32;})
+      vesktop
       qbittorrent
-      prismlauncher
     ];
   };
 }

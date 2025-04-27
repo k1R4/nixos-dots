@@ -16,7 +16,7 @@ in {
         defaultFonts = {
           serif = ["Source Serif Pro"];
           sansSerif = ["Open Sans"];
-          monospace = ["JetBrains Mono" "Fira Code"];
+          monospace = ["Hermit" "JetBrains Mono"];
           emoji = ["Noto Color Emoji"];
         };
       };
@@ -33,6 +33,7 @@ in {
         jetbrains-mono
         open-sans
         source-serif-pro
+        nerd-fonts.blex-mono
         fira-code
         noto-fonts-emoji
       ];
@@ -55,7 +56,7 @@ in {
         theme.name = "Orchis-Dark";
 
         iconTheme.package = pkgs.qogir-icon-theme;
-        iconTheme.name = "Qogir-dark";
+        iconTheme.name = "Qogir";
       };
     };
   };
