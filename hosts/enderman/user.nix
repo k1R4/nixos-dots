@@ -27,6 +27,7 @@
     git.enable = true;
     pwn.enable = true;
     rnnoise.enable = true;
+    seafile.enable = true;
     theme.enable = true;
     tailscale.enable = true;
   };

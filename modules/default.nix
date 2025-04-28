@@ -12,6 +12,7 @@
     ./pcmanfm
     ./pwn
     ./rnnoise
+    ./seafile
     ./spicetify
     ./tailscale
     ./theme
