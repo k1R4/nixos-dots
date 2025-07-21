@@ -5,14 +5,21 @@
     ./dunst
     ./fuzzel
     ./gaming
+    ./gammastep
     ./git
+    ./hyprlock
+    ./ignis
+    ./kanshi
     ./kitty
     ./neovim
     ./niri
     ./pcmanfm
     ./pwn
+    ./python
+    ./quickshell
     ./rnnoise
     ./seafile
+    ./swaylock
     ./spicetify
     ./tailscale
     ./theme

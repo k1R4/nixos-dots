@@ -15,6 +15,11 @@
 
     ags.url = "github:aylur/ags";
 
+    ignis = {
+      url = "github:ignis-sh/ignis";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -45,6 +50,7 @@
   in {
     nixosConfigurations = {
       enderman = mkSystem "x86_64-linux" "enderman";
+      endermite = mkSystem "x86_64-linux" "endermite";
     };
   };
 }

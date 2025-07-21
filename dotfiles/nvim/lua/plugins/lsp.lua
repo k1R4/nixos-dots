@@ -20,10 +20,6 @@ return {
           print("[LSP Setup Error] " .. lsp .. ": " .. err)
         end
       end
-      -- for _, lsp in ipairs(servers)
-      -- do
-      --   lspconfig[lsp].setup { capabilities = capabilities }
-      -- end
 
       lspconfig.lua_ls.setup { settings = { Lua = { diagnostics = { globals = { 'vim' } } } } }
 

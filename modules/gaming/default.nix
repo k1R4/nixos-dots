@@ -27,6 +27,8 @@ in {
         protontricks
         bottles
         heroic
+        umu-launcher
+        cartridges
         prismlauncher
       ];
     };

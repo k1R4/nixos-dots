@@ -1,0 +1,24 @@
+output "Samsung Display Corp. 0x4197 Unknown" {
+  mode 2880x1800@120.000
+  position 2048,0
+  scale 1.75
+  adaptive_sync on
+  alias $INTERNAL
+} 
+
+output "ASUSTek COMPUTER INC XG27ACS S4LMTF096878" {
+  mode 2560x1440@143.996
+  position 0,0
+  scale 1.25
+  adaptive_sync on
+  alias $HOME
+}
+
+profile no_external {
+  output $INTERNAL enable
+}
+
+profile home {
+  output $INTERNAL disable
+  output $HOME enable
+}

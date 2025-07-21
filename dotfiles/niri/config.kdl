@@ -23,25 +23,27 @@ input {
 }
 
 // Monitors
-output "eDP-1" {
-    mode "2560x1440@165.003"
-    // variable-refresh-rate
-    scale 1.75
-    transform "normal"
-    position x=2048 y=0
-}
-
-output "HDMI-A-1" {
-    mode "2560x1440@144.000"
-    // variable-refresh-rate
-    scale 1.25
-    transform "normal"
-    position x=0 y=0
-}
+// output "eDP-1" {
+//     mode "2880x1800@120.001"
+//     variable-refresh-rate
+//     scale 1.75
+//     transform "normal"
+//     position x=2048 y=0
+// }
+//
+// output "HDMI-A-1" {
+//     mode "2560x1440@143.996" 
+//     variable-refresh-rate
+//     scale 1.25
+//     transform "normal"
+//     position x=0 y=0
+// }
 
 // Layout
 layout {
-    gaps 12
+    gaps 9
+	background-color "transparent"
+
     center-focused-column "on-overflow"
     preset-column-widths {
         proportion 0.33333
@@ -55,7 +57,6 @@ layout {
     }
 
     border {
-        // off
         width 5
 
         active-gradient from="#D2A6FF" to="#82aaff" angle=0
@@ -67,6 +68,20 @@ layout {
         // right 64
         // top 64
         // bottom 30
+    }
+}
+
+// Make the wallpaper stationary, rather than moving with workspaces.
+layer-rule {
+    match namespace="swww-daemon"
+    place-within-backdrop true
+}
+
+// Overview
+overview {
+    zoom 0.5
+	workspace-shadow {
+        off
     }
 }
 
@@ -111,7 +126,7 @@ binds {
 
     Mod+Return { spawn "kitty"; }
     Mod+Y { spawn "fuzzel"; }
-    Mod+L { spawn "swaylock"; }
+    Mod+L { spawn "hyprlock"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
@@ -234,4 +249,7 @@ binds {
 
     Mod+Shift+Q { quit; }
     Mod+Shift+L { power-off-monitors; }
+
+	Mod+O { toggle-overview; }
+
 }

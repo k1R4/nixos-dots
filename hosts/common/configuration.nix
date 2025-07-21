@@ -28,15 +28,17 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.initrd.systemd.enable = true;
+  boot.loader.systemd-boot.configurationLimit = 10;
 
   # Networking
   networking.useDHCP = lib.mkDefault true;
-  networking.enableIPv6 = false;
+  networking.enableIPv6 = true;
   networking.networkmanager.enable = true;
 
   # Timezone and locale
-  time.timeZone = "Asia/Kolkata";
+  # time.timeZone = "Asia/Kolkata";
   i18n.defaultLocale = "en_IN";
+  services.automatic-timezoned.enable = true;
 
   # Configure console keymap
   console.keyMap = "dvorak";
