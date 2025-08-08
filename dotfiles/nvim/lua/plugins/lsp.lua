@@ -11,7 +11,7 @@ return {
     config = function()
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
       local lspconfig = require('lspconfig')
-      local servers = { 'ccls', 'basedpyright', 'gopls', 'rust_analyzer', 'nixd', 'ts_ls' }
+      local servers = { 'clangd', 'basedpyright', 'gopls', 'rust_analyzer', 'nixd', 'ts_ls' }
       for _, lsp in ipairs(servers) do
         local ok, err = pcall(function()
           lspconfig[lsp].setup { capabilities = capabilities }
@@ -22,6 +22,7 @@ return {
       end
 
       lspconfig.lua_ls.setup { settings = { Lua = { diagnostics = { globals = { 'vim' } } } } }
+      lspconfig.qmlls.setup { cmd = { "qmlls", "-E" } }
 
       vim.api.nvim_create_autocmd('LspAttach', {
         callback = function(args)

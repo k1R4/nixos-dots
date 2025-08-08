@@ -18,7 +18,7 @@ input {
 		natural-scroll
     }
 
-    warp-mouse-to-focus
+    // warp-mouse-to-focus
     // focus-follows-mouse
 }
 
@@ -29,14 +29,6 @@ input {
 //     scale 1.75
 //     transform "normal"
 //     position x=2048 y=0
-// }
-//
-// output "HDMI-A-1" {
-//     mode "2560x1440@143.996" 
-//     variable-refresh-rate
-//     scale 1.25
-//     transform "normal"
-//     position x=0 y=0
 // }
 
 // Layout
@@ -88,8 +80,9 @@ overview {
 // Autostart
 spawn-at-startup "dunst"
 spawn-at-startup "xwayland-satellite" ":12"
+spawn-at-startup "quickshell"
+spawn-at-startup "playerctld" "daemon"
 spawn-at-startup "swww-daemon"
-// spawn-at-startup "ags" "run" "--gtk4"
 
 environment {
     DISPLAY ":12"
@@ -127,11 +120,16 @@ binds {
     Mod+Return { spawn "kitty"; }
     Mod+Y { spawn "fuzzel"; }
     Mod+L { spawn "hyprlock"; }
+	Mod+R { spawn "~/.config/niri/scripts/edit-nixos.sh"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
     XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+	XF86AudioPause       allow-when-locked=true { spawn "playerctl" "pause"; }
+	XF86AudioPlay        allow-when-locked=true { spawn "playerctl" "play"; }
+	XF86AudioPrev        allow-when-locked=true { spawn "playerctl" "previous"; }
+	XF86AudioNext        allow-when-locked=true { spawn "playerctl" "next"; }
 
     Mod+Apostrophe { close-window; }
 

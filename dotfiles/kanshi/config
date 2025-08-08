@@ -14,6 +14,14 @@ output "ASUSTek COMPUTER INC XG27ACS S4LMTF096878" {
   alias $HOME
 }
 
+output "LG Electronics LG HDR 4K 307NTKF54949" {
+  mode 3840x2160@59.997
+  position 0,0
+  scale 1.875
+  adaptive_sync on
+  alias $SEFCOM
+}
+
 profile no_external {
   output $INTERNAL enable
 }
@@ -21,4 +29,9 @@ profile no_external {
 profile home {
   output $INTERNAL disable
   output $HOME enable
+}
+
+profile sefcom {
+  output $INTERNAL disable
+  output $SEFCOM enable
 }

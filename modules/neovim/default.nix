@@ -28,12 +28,14 @@ in {
           sshfs
           basedpyright
           ccls
+          clang-tools
           gopls
           rust-analyzer
           nixd
           alejandra
           lua-language-server
           typescript-language-server
+          kdePackages.qtdeclarative
         ];
       };
       home.sessionVariables."EDITOR" = "nvim";

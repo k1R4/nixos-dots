@@ -8,12 +8,13 @@
 
   config.modules = {
     # GUI
-    ags.enable = true;
+    # ags.enable = true;
     dunst.enable = true;
     fuzzel.enable = true;
     hyprlock.enable = true;
     kitty.enable = true;
     niri.enable = true;
+    quickshell.enable = true;
 
     # Apps
     chromium.enable = true;
@@ -22,6 +23,7 @@
     spicetify.enable = true;
     thunar.enable = true;
     virt-manager.enable = true;
+    virtualbox.enable = true;
     vscodium.enable = true;
 
     # Misc
@@ -31,7 +33,7 @@
     pwn.enable = true;
     python.enable = true;
     rnnoise.enable = true;
-    seafile.enable = true;
+    # seafile.enable = true;
     theme.enable = true;
     tailscale.enable = true;
   };
@@ -40,11 +42,20 @@
     home.packages = with pkgs; [
       killall
       dnsutils
+      tree
+      lm_sensors
       neofetch
       nvtopPackages.full
-      pavucontrol
+      helvum
+      pwvucontrol
+      playerctl
       vesktop
+      slack
       qbittorrent
+      obsidian
+      ffsend
     ];
+
+    services.mpris-proxy.enable = true;
   };
 }

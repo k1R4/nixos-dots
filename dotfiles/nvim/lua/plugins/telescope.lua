@@ -8,12 +8,14 @@ return {
     },
     enabled = true,
     config = function()
-      vim.keymap.set("n", "<leader>ff", require('telescope.builtin').find_files)
-      vim.keymap.set("n", "<leader>fr", require('telescope.builtin').lsp_references)
-      vim.keymap.set("n", "<leader>fs", require('telescope.builtin').lsp_document_symbols)
-      vim.keymap.set("n", "<leader>fb", require('telescope.builtin').buffers)
-      vim.keymap.set("n", "<leader>fg", require('telescope.builtin').live_grep)
-      vim.keymap.set("n", "<leader>fh", require('telescope.builtin').help_tags)
+      local builtin = require('telescope.builtin')
+      vim.keymap.set("n", "<leader>ff", builtin.find_files)
+      vim.keymap.set("n", "<leader>fr", builtin.lsp_references)
+      vim.keymap.set("n", "<leader>fd", builtin.lsp_definitions)
+      vim.keymap.set("n", "<leader>fs", builtin.lsp_document_symbols)
+      vim.keymap.set("n", "<leader>fb", builtin.buffers)
+      vim.keymap.set("n", "<leader>fg", builtin.live_grep)
+      vim.keymap.set("n", "<leader>fh", builtin.help_tags)
     end
   }
 }

@@ -24,8 +24,6 @@ in {
 
         enabledExtensions = with spicePkgs.extensions; [
           adblock
-          hidePodcasts
-          shuffle # shuffle+ (special characters are sanitized out of extension names)
         ];
         enabledCustomApps = with spicePkgs.apps; [
           newReleases
@@ -35,8 +33,8 @@ in {
           pointer
         ];
 
-        theme = spicePkgs.themes.dribbblish;
-        colorScheme = "purple";
+        theme = spicePkgs.themes.bloom;
+        colorScheme = "dark";
       };
     };
   };

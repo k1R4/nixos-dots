@@ -81,6 +81,7 @@
 
   # Power Profiles
   services.power-profiles-daemon.enable = true;
+  services.upower.enable = true;
 
   # SSD
   services.fstrim.enable = true;
@@ -88,5 +89,10 @@
   # Bluetooth
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
+  hardware.bluetooth.settings = {
+    General = {
+      Experimental = true;
+    };
+  };
   services.blueman.enable = true;
 }

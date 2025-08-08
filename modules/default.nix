@@ -25,6 +25,7 @@
     ./theme
     ./thunar
     ./virt-manager
+    ./virtualbox
     ./vscodium
   ];
 }
