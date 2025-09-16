@@ -29,11 +29,11 @@ Item {
         Rectangle {
             id: batteryLevel
             implicitWidth: parent.width - 2 * parent.border.width
-            implicitHeight: (parent.height - 2 * parent.border.width) * Power.percentage
+            implicitHeight: (parent.height - 2 * parent.border.width) * Power.percentage / 100
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.bottom: parent.bottom
             anchors.bottomMargin: parent.border.width
-            color: Power.percentage > 0.8 ? Colors.green : Power.percentage > 0.4 ? Colors.yellow : Colors.red
+            color: Power.percentage > 80 ? Colors.green : Power.percentage > 60 ? Colors.yellow : Power.percentage > 20 ? Colors.orange : Colors.red
             radius: width / 3
         }
 
@@ -41,9 +41,10 @@ Item {
             id: batteryText
             visible: !Power.charging
             anchors.centerIn: parent
-            text: Power.percentage * 100
+            text: Power.percentage
             font.family: "BlexMono Nerd Font"
             font.pointSize: 8
+            font.bold: true
         }
 
         Image {
@@ -68,6 +69,6 @@ Item {
     Tooltip {
         targetItem: root
         mouseArea: mouse
-        text: Power.charging ? `${Power.percentage * 100}% (${Power.timeTo} to full)` : `${Power.percentage * 100}% (${Power.timeTo} left)`
+        text: Power.charging ? `${Power.percentage}% (${Power.timeTo} to full)` : `${Power.percentage}% (${Power.timeTo} left)`
     }
 }

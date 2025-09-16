@@ -28,6 +28,7 @@ in {
       home.packages = with pkgs; [
         swww
         xwayland-satellite
+        wl-clipboard
       ];
 
       services.gnome-keyring.enable = true;

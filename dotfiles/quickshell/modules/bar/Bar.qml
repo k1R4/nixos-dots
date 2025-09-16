@@ -3,6 +3,7 @@ import Quickshell.Io
 import QtQuick
 import "../theme"
 import "../../components"
+import "../../services"
 
 Scope {
     id: root

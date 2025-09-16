@@ -24,20 +24,15 @@ Item {
                 radius: 9999
                 color: modelData.id === Niri.focusedId ? Colors.pink : Colors.gray
 
-                // MouseArea {
-                //     anchors.fill: parent
-                //     onClicked: Niri.focusWorkspace(modetData.id)
-                // }
-
                 Behavior on color {
                     ColorAnimation {
-                        duration: 150
+                        duration: 200
                     }
                 }
 
                 Behavior on height {
                     NumberAnimation {
-                        duration: 200
+                        duration: 300
                         easing.type: Easing.OutCubic
                     }
                 }

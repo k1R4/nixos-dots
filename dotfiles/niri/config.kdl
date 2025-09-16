@@ -80,7 +80,7 @@ overview {
 // Autostart
 spawn-at-startup "dunst"
 spawn-at-startup "xwayland-satellite" ":12"
-spawn-at-startup "quickshell"
+spawn-at-startup "bash" "-c" "sleep 2 && quickshell"
 spawn-at-startup "playerctld" "daemon"
 spawn-at-startup "swww-daemon"
 
@@ -121,6 +121,7 @@ binds {
     Mod+Y { spawn "fuzzel"; }
     Mod+L { spawn "hyprlock"; }
 	Mod+R { spawn "~/.config/niri/scripts/edit-nixos.sh"; }
+	Mod+Shift+R { set-dynamic-cast-window; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }

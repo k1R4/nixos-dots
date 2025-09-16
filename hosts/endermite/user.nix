@@ -54,6 +54,7 @@
       qbittorrent
       obsidian
       ffsend
+      tmux
     ];
 
     services.mpris-proxy.enable = true;

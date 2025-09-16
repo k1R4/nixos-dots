@@ -6,7 +6,7 @@ import QtQuick
 Singleton {
     id: root
     property bool charging: !UPower.onBattery
-    property real percentage: UPower.displayDevice.percentage
+    property int percentage: UPower.displayDevice.percentage * 100
     property string timeTo: formatSecondsToString(charging ? UPower.displayDevice.timeToFull : UPower.displayDevice.timeToEmpty)
 
     function formatSecondsToString(n) {
