@@ -16,7 +16,7 @@ in {
     modules.python.pythonPackages = mkAfter [
       "pwntools"
       "nclib"
-      "binsync"
+      # "binsync"
       "angr"
       "z3-solver"
     ];
@@ -27,7 +27,6 @@ in {
         gef
         ghidra
         binaryninja-free
-        ida-free
         gcc_multi
         glibc_multi.dev
         libgcc
@@ -40,13 +39,8 @@ in {
 
       programs.fish.shellInit = ''
         set -gx TERM xterm
-        set -gx FFSEND_HOST http://send.shell.phish
       '';
     };
-
-    virtualisation.docker.extraOptions = ''
-      --insecure-registry docker.shell.phish
-    '';
 
     programs.nix-ld.libraries = with pkgs; [
       libgcc

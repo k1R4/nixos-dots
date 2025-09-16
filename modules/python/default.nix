@@ -11,7 +11,7 @@ in {
     enable = lib.mkEnableOption "python";
     base = lib.mkOption {
       type = lib.types.package;
-      default = pkgs.python312;
+      default = pkgs.python313;
     };
     pythonPackages = lib.mkOption {
       type = lib.types.listOf lib.types.unspecified;
